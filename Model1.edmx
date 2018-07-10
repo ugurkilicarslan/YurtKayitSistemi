@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="yurtModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="gider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="giderTuru" Type="nvarchar" MaxLength="50" />
+          <Property Name="tutar" Type="float" />
+        </EntityType>
+        <EntityType Name="izin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tckNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="gidecegiAdres" Type="nvarchar(max)" />
+          <Property Name="gidisTarihi" Type="date" />
+          <Property Name="donusTarihi" Type="date" />
+          <Property Name="gidecegiKisiTel" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="sifre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="menuler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="yemekler" Type="nvarchar(max)" />
+          <Property Name="tarih" Type="date" />
+        </EntityType>
+        <EntityType Name="odalar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kodu" Type="int" />
+          <Property Name="ogrenciTckNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="katNumarasi" Type="int" />
+        </EntityType>
+        <EntityType Name="odemeler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tckNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="vade" Type="int" />
+          <Property Name="kalanTaksit" Type="int" />
+          <Property Name="aylikTutar" Type="float" />
+          <Property Name="odemeTarihi" Type="date" />
+        </EntityType>
+        <EntityType Name="ogrenci">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adi" Type="nvarchar" MaxLength="50" />
+          <Property Name="soyadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="tckNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="okul" Type="nvarchar" MaxLength="50" />
+          <Property Name="bolum" Type="nvarchar" MaxLength="50" />
+          <Property Name="sinif" Type="int" />
+          <Property Name="kayitTarihi" Type="date" />
+          <Property Name="sozlesmeSuresi" Type="int" />
+          <Property Name="kalacagiOda" Type="int" />
+          <Property Name="telefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="veliAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="veliTelefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="kanGrubu" Type="nvarchar" MaxLength="50" />
+          <Property Name="adresi" Type="nvarchar(max)" />
+          <Property Name="odemelerBilgisi" Type="int" />
+          <Property Name="fotograf" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="personel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adi" Type="nvarchar" MaxLength="50" />
+          <Property Name="soyadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="maas" Type="float" />
+          <Property Name="gorevi" Type="nvarchar" MaxLength="50" />
+          <Property Name="fotograf" Type="nvarchar(max)" />
+          <Property Name="kanGrubu" Type="nvarchar" MaxLength="50" />
+          <Property Name="telefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="adres" Type="nvarchar(max)" />
+          <Property Name="tckNo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="yurtModelStoreContainer">
+          <EntitySet Name="gider" EntityType="Self.gider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="izin" EntityType="Self.izin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="menuler" EntityType="Self.menuler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="odalar" EntityType="Self.odalar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="odemeler" EntityType="Self.odemeler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ogrenci" EntityType="Self.ogrenci" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="personel" EntityType="Self.personel" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="yurtModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="veritabanı" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="login" EntityType="Self.login" />
+          <EntitySet Name="ogrenci" EntityType="yurtModel.ogrenci" />
+          <EntitySet Name="izin" EntityType="yurtModel.izin" />
+          <EntitySet Name="odalar" EntityType="yurtModel.odalar" />
+          <EntitySet Name="personel" EntityType="yurtModel.personel" />
+          <EntitySet Name="odemeler" EntityType="yurtModel.odemeler" />
+          <EntitySet Name="menuler" EntityType="yurtModel.menuler" />
+          <EntitySet Name="gider" EntityType="yurtModel.gider" />
+        </EntityContainer>
+        <EntityType Name="ogrenci">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tckNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="okul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bolum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sinif" Type="Int32" />
+          <Property Name="kayitTarihi" Type="DateTime" Precision="0" />
+          <Property Name="sozlesmeSuresi" Type="Int32" />
+          <Property Name="kalacagiOda" Type="Int32" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="veliAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="veliTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kanGrubu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adresi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="odemelerBilgisi" Type="Int32" />
+          <Property Name="fotograf" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="izin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tckNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gidecegiAdres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="gidisTarihi" Type="DateTime" Precision="0" />
+          <Property Name="donusTarihi" Type="DateTime" Precision="0" />
+          <Property Name="gidecegiKisiTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="odalar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kodu" Type="Int32" />
+          <Property Name="ogrenciTckNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="katNumarasi" Type="Int32" />
+        </EntityType>
+        <EntityType Name="personel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="maas" Type="Double" />
+          <Property Name="gorevi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fotograf" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="kanGrubu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="tckNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="odemeler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tckNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vade" Type="Int32" />
+          <Property Name="kalanTaksit" Type="Int32" />
+          <Property Name="aylikTutar" Type="Double" />
+          <Property Name="odemeTarihi" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="menuler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="yemekler" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="tarih" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="gider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="giderTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tutar" Type="Double" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="yurtModelStoreContainer" CdmEntityContainer="veritabanı">
+          <EntitySetMapping Name="login">
+            <EntityTypeMapping TypeName="yurtModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="kAdi" ColumnName="kAdi" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ogrenci">
+            <EntityTypeMapping TypeName="yurtModel.ogrenci">
+              <MappingFragment StoreEntitySet="ogrenci">
+                <ScalarProperty Name="fotograf" ColumnName="fotograf" />
+                <ScalarProperty Name="odemelerBilgisi" ColumnName="odemelerBilgisi" />
+                <ScalarProperty Name="adresi" ColumnName="adresi" />
+                <ScalarProperty Name="kanGrubu" ColumnName="kanGrubu" />
+                <ScalarProperty Name="veliTelefon" ColumnName="veliTelefon" />
+                <ScalarProperty Name="veliAdi" ColumnName="veliAdi" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="kalacagiOda" ColumnName="kalacagiOda" />
+                <ScalarProperty Name="sozlesmeSuresi" ColumnName="sozlesmeSuresi" />
+                <ScalarProperty Name="kayitTarihi" ColumnName="kayitTarihi" />
+                <ScalarProperty Name="sinif" ColumnName="sinif" />
+                <ScalarProperty Name="bolum" ColumnName="bolum" />
+                <ScalarProperty Name="okul" ColumnName="okul" />
+                <ScalarProperty Name="tckNo" ColumnName="tckNo" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="izin">
+            <EntityTypeMapping TypeName="yurtModel.izin">
+              <MappingFragment StoreEntitySet="izin">
+                <ScalarProperty Name="gidecegiKisiTel" ColumnName="gidecegiKisiTel" />
+                <ScalarProperty Name="donusTarihi" ColumnName="donusTarihi" />
+                <ScalarProperty Name="gidisTarihi" ColumnName="gidisTarihi" />
+                <ScalarProperty Name="gidecegiAdres" ColumnName="gidecegiAdres" />
+                <ScalarProperty Name="tckNo" ColumnName="tckNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="odalar">
+            <EntityTypeMapping TypeName="yurtModel.odalar">
+              <MappingFragment StoreEntitySet="odalar">
+                <ScalarProperty Name="katNumarasi" ColumnName="katNumarasi" />
+                <ScalarProperty Name="ogrenciTckNo" ColumnName="ogrenciTckNo" />
+                <ScalarProperty Name="kodu" ColumnName="kodu" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="personel">
+            <EntityTypeMapping TypeName="yurtModel.personel">
+              <MappingFragment StoreEntitySet="personel">
+                <ScalarProperty Name="tckNo" ColumnName="tckNo" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="kanGrubu" ColumnName="kanGrubu" />
+                <ScalarProperty Name="fotograf" ColumnName="fotograf" />
+                <ScalarProperty Name="gorevi" ColumnName="gorevi" />
+                <ScalarProperty Name="maas" ColumnName="maas" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="odemeler">
+            <EntityTypeMapping TypeName="yurtModel.odemeler">
+              <MappingFragment StoreEntitySet="odemeler">
+                <ScalarProperty Name="odemeTarihi" ColumnName="odemeTarihi" />
+                <ScalarProperty Name="aylikTutar" ColumnName="aylikTutar" />
+                <ScalarProperty Name="kalanTaksit" ColumnName="kalanTaksit" />
+                <ScalarProperty Name="vade" ColumnName="vade" />
+                <ScalarProperty Name="tckNo" ColumnName="tckNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="menuler">
+            <EntityTypeMapping TypeName="yurtModel.menuler">
+              <MappingFragment StoreEntitySet="menuler">
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="yemekler" ColumnName="yemekler" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gider">
+            <EntityTypeMapping TypeName="yurtModel.gider">
+              <MappingFragment StoreEntitySet="gider">
+                <ScalarProperty Name="tutar" ColumnName="tutar" />
+                <ScalarProperty Name="giderTuru" ColumnName="giderTuru" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
