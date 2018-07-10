@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="yurtModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="veritabanı" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="login" EntityType="Self.login" />
+    <EntitySet Name="ogrenci" EntityType="yurtModel.ogrenci" />
+    <EntitySet Name="izin" EntityType="yurtModel.izin" />
+    <EntitySet Name="odalar" EntityType="yurtModel.odalar" />
+    <EntitySet Name="personel" EntityType="yurtModel.personel" />
+    <EntitySet Name="odemeler" EntityType="yurtModel.odemeler" />
+    <EntitySet Name="menuler" EntityType="yurtModel.menuler" />
+    <EntitySet Name="gider" EntityType="yurtModel.gider" />
+  </EntityContainer>
+  <EntityType Name="ogrenci">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tckNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="okul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bolum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sinif" Type="Int32" />
+    <Property Name="kayitTarihi" Type="DateTime" Precision="0" />
+    <Property Name="sozlesmeSuresi" Type="Int32" />
+    <Property Name="kalacagiOda" Type="Int32" />
+    <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="veliAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="veliTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kanGrubu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="adresi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="odemelerBilgisi" Type="Int32" />
+    <Property Name="fotograf" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="izin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tckNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gidecegiAdres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gidisTarihi" Type="DateTime" Precision="0" />
+    <Property Name="donusTarihi" Type="DateTime" Precision="0" />
+    <Property Name="gidecegiKisiTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="odalar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kodu" Type="Int32" />
+    <Property Name="ogrenciTckNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="katNumarasi" Type="Int32" />
+  </EntityType>
+  <EntityType Name="personel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="maas" Type="Double" />
+    <Property Name="gorevi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fotograf" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="kanGrubu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tckNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="odemeler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tckNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vade" Type="Int32" />
+    <Property Name="kalanTaksit" Type="Int32" />
+    <Property Name="aylikTutar" Type="Double" />
+    <Property Name="odemeTarihi" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="menuler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yemekler" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tarih" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="gider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="giderTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tutar" Type="Double" />
+  </EntityType>
+</Schema>

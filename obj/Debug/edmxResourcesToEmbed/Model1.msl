@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="yurtModelStoreContainer" CdmEntityContainer="veritabanı">
+    <EntitySetMapping Name="login">
+      <EntityTypeMapping TypeName="yurtModel.login">
+        <MappingFragment StoreEntitySet="login">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="kAdi" ColumnName="kAdi" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ogrenci">
+      <EntityTypeMapping TypeName="yurtModel.ogrenci">
+        <MappingFragment StoreEntitySet="ogrenci">
+          <ScalarProperty Name="fotograf" ColumnName="fotograf" />
+          <ScalarProperty Name="odemelerBilgisi" ColumnName="odemelerBilgisi" />
+          <ScalarProperty Name="adresi" ColumnName="adresi" />
+          <ScalarProperty Name="kanGrubu" ColumnName="kanGrubu" />
+          <ScalarProperty Name="veliTelefon" ColumnName="veliTelefon" />
+          <ScalarProperty Name="veliAdi" ColumnName="veliAdi" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="kalacagiOda" ColumnName="kalacagiOda" />
+          <ScalarProperty Name="sozlesmeSuresi" ColumnName="sozlesmeSuresi" />
+          <ScalarProperty Name="kayitTarihi" ColumnName="kayitTarihi" />
+          <ScalarProperty Name="sinif" ColumnName="sinif" />
+          <ScalarProperty Name="bolum" ColumnName="bolum" />
+          <ScalarProperty Name="okul" ColumnName="okul" />
+          <ScalarProperty Name="tckNo" ColumnName="tckNo" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="izin">
+      <EntityTypeMapping TypeName="yurtModel.izin">
+        <MappingFragment StoreEntitySet="izin">
+          <ScalarProperty Name="gidecegiKisiTel" ColumnName="gidecegiKisiTel" />
+          <ScalarProperty Name="donusTarihi" ColumnName="donusTarihi" />
+          <ScalarProperty Name="gidisTarihi" ColumnName="gidisTarihi" />
+          <ScalarProperty Name="gidecegiAdres" ColumnName="gidecegiAdres" />
+          <ScalarProperty Name="tckNo" ColumnName="tckNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="odalar">
+      <EntityTypeMapping TypeName="yurtModel.odalar">
+        <MappingFragment StoreEntitySet="odalar">
+          <ScalarProperty Name="katNumarasi" ColumnName="katNumarasi" />
+          <ScalarProperty Name="ogrenciTckNo" ColumnName="ogrenciTckNo" />
+          <ScalarProperty Name="kodu" ColumnName="kodu" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="personel">
+      <EntityTypeMapping TypeName="yurtModel.personel">
+        <MappingFragment StoreEntitySet="personel">
+          <ScalarProperty Name="tckNo" ColumnName="tckNo" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="kanGrubu" ColumnName="kanGrubu" />
+          <ScalarProperty Name="fotograf" ColumnName="fotograf" />
+          <ScalarProperty Name="gorevi" ColumnName="gorevi" />
+          <ScalarProperty Name="maas" ColumnName="maas" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="odemeler">
+      <EntityTypeMapping TypeName="yurtModel.odemeler">
+        <MappingFragment StoreEntitySet="odemeler">
+          <ScalarProperty Name="odemeTarihi" ColumnName="odemeTarihi" />
+          <ScalarProperty Name="aylikTutar" ColumnName="aylikTutar" />
+          <ScalarProperty Name="kalanTaksit" ColumnName="kalanTaksit" />
+          <ScalarProperty Name="vade" ColumnName="vade" />
+          <ScalarProperty Name="tckNo" ColumnName="tckNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="menuler">
+      <EntityTypeMapping TypeName="yurtModel.menuler">
+        <MappingFragment StoreEntitySet="menuler">
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="yemekler" ColumnName="yemekler" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gider">
+      <EntityTypeMapping TypeName="yurtModel.gider">
+        <MappingFragment StoreEntitySet="gider">
+          <ScalarProperty Name="tutar" ColumnName="tutar" />
+          <ScalarProperty Name="giderTuru" ColumnName="giderTuru" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

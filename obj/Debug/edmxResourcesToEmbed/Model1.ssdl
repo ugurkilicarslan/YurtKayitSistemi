@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="yurtModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="gider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="giderTuru" Type="nvarchar" MaxLength="50" />
+    <Property Name="tutar" Type="float" />
+  </EntityType>
+  <EntityType Name="izin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tckNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="gidecegiAdres" Type="nvarchar(max)" />
+    <Property Name="gidisTarihi" Type="date" />
+    <Property Name="donusTarihi" Type="date" />
+    <Property Name="gidecegiKisiTel" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="sifre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="menuler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yemekler" Type="nvarchar(max)" />
+    <Property Name="tarih" Type="date" />
+  </EntityType>
+  <EntityType Name="odalar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kodu" Type="int" />
+    <Property Name="ogrenciTckNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="katNumarasi" Type="int" />
+  </EntityType>
+  <EntityType Name="odemeler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tckNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="vade" Type="int" />
+    <Property Name="kalanTaksit" Type="int" />
+    <Property Name="aylikTutar" Type="float" />
+    <Property Name="odemeTarihi" Type="date" />
+  </EntityType>
+  <EntityType Name="ogrenci">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="tckNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="okul" Type="nvarchar" MaxLength="50" />
+    <Property Name="bolum" Type="nvarchar" MaxLength="50" />
+    <Property Name="sinif" Type="int" />
+    <Property Name="kayitTarihi" Type="date" />
+    <Property Name="sozlesmeSuresi" Type="int" />
+    <Property Name="kalacagiOda" Type="int" />
+    <Property Name="telefon" Type="nvarchar" MaxLength="50" />
+    <Property Name="veliAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="veliTelefon" Type="nvarchar" MaxLength="50" />
+    <Property Name="kanGrubu" Type="nvarchar" MaxLength="50" />
+    <Property Name="adresi" Type="nvarchar(max)" />
+    <Property Name="odemelerBilgisi" Type="int" />
+    <Property Name="fotograf" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="personel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="maas" Type="float" />
+    <Property Name="gorevi" Type="nvarchar" MaxLength="50" />
+    <Property Name="fotograf" Type="nvarchar(max)" />
+    <Property Name="kanGrubu" Type="nvarchar" MaxLength="50" />
+    <Property Name="telefon" Type="nvarchar" MaxLength="50" />
+    <Property Name="adres" Type="nvarchar(max)" />
+    <Property Name="tckNo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="yurtModelStoreContainer">
+    <EntitySet Name="gider" EntityType="Self.gider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="izin" EntityType="Self.izin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="menuler" EntityType="Self.menuler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="odalar" EntityType="Self.odalar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="odemeler" EntityType="Self.odemeler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ogrenci" EntityType="Self.ogrenci" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="personel" EntityType="Self.personel" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
